@@ -129,10 +129,21 @@ echo "✅ Added starship.fish"
 # Fastfetch
 cat << 'EOF' > "$CONF_DIR/fastfetch.fish"
 # Run fastfetch only on interactive login
+#run fastfetch only on interactive login
+function run_fastfetch_smart
+    set cols (tput cols)
+    if test $cols -lt 80
+        fastfetch --logo none --structure "os host uptime"
+    else if test $cols -lt 100
+        fastfetch --logo small --structure "os host uptime shell"
+    else
+        fastfetch
+    end
+end
 if status is-interactive
     and not set -q FASTFETCH_SHOWN
     set -g FASTFETCH_SHOWN 1
-    fastfetch
+    run_fastfetch_smart
 end
 EOF
 echo "✅ Added fastfetch.fish"
