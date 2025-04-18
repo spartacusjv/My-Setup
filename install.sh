@@ -34,6 +34,7 @@ sudo_keepalive_pid=$!
 # Install packages
 case "$DISTRO" in
   ubuntu|debian)
+    touch ~/.hushlogin
     sudo apt-get update -y
     sudo apt-get upgrade -y
     sudo apt-get install software-properties-common curl wget git unzip gpg lsb-release ca-certificates -y
