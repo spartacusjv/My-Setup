@@ -1,6 +1,7 @@
-#Notes 
+**                       #Notes **
 
+All fish alias and functions :- ** ~/.config/fish/conf.d/*.fish **
 
-all fish alias and functions are in 
+Location of alacritty.toml :- ** C:\Users\Spartacus\AppData\Roaming\alacritty **
 
-~/.config/fish/conf.d/*.fish
+ 
