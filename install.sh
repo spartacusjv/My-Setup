@@ -5,8 +5,6 @@
 # ~/.config/fish/conf.d/*.fish
 
 
-
-
 # Detect OS
 if [ -f /etc/os-release ]; then
   source /etc/os-release
@@ -25,6 +23,10 @@ else
   IS_WSL=false
   echo "🖥️ Running on native Linux."
 fi
+
+# Set timezone
+sudo timedatectl set-timezone Asia/Kolkata
+
 
 # Start sudo keep-alive
 sudo -v
